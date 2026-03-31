@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How a Founder Got $100k Funding</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAADIklEQVR4nO1VO28TQRCe2d3zYV9sRzZJHGIgiJcgEhICISoKChqEREODRI9oKBASf4GGAglEBw0VLS09/wBRgC8Pnx0nOC87vmQfQ7HxcXHuHEeioOArTqed3e/7ZnZ2F+A/DgGmBjA1FIGI/qqZFB/DraTGxovFfD6vtTm4nIikUjvhTq/Xk0oOdyASTRFRqVSqzlSllGkGjTFSyq3OVqu1sr6xfgQBC621lHKIACIKIcqlcrlU/tVu1/yalAnZsDQBPICBKAAQkVJKKXW8XJ67fNl13SMIHNRz+hBC2DJGPqSU2WPZC+cvMDZImFqiAfYwDDe3Nm1TOI4Y88Zc19VaRxOkUoWx/InpE0v1pUh+JAEi4px3up2a70eDjhAzM9XpSkUpZcvFEJVWkxMTzWZD9YXhSCVCRMbYXk2U8uf91V+rQojIrDHGdd18vgCxczqqgE0lgl0fNBrRf+TD87z4qkMELF3iOACEYbi7u7uvwQgyGSc+85A9EGLYhCR5GmjoYRkIzheXFv15n3OeeNw455zzfUOIWun4QKpBzri/sFAPAgAwhgr5fJ8B7dcY43me4zhRI1mEOzuHCNis640gDEN7MbVWWmtrbYjdz7Z3T85U4yWyqp3O1kgZhGG4x8Q4GC2Vth1i2yaXzU5NVbxcTmsdXRuc8263293ejltJEUAGQMAEPnkHE6fg1SNYbwLyYqEwe3pWKcUYI6KI3YIxVm8E1kEkkLTJiACEyPDxG7p+l6qX4NlHGK+Q0fUg+FmrMcaUUnF2IspkMs3l5Xa7HWdPEkAEIiSCx2/p1kPQEgDo3DV48QmLkwjQaDb8+XnHcaDfpgzRcZzmcrPm1wbYYfBFQwQi4A4+/QBX78D3r7DRAq3AG4ezV6HXgZcPoPmDAKYrlTOzZ2ylt3u9IAhWVleSi73/n8ArsvvPiQx8eU8tH/p2cKwEN+7hxZv0+TUsfiOAqckpL5dbW1/b2Nw0xiTv5YB9zGTZ3C2snP0zyBgwBtFOujl25TYWJyHp/RlBIpPdy4lxwP3bgwhs79Cim4s/eCNRD3Klx4ZG/+OfxG/el44a4s2QbAAAAABJRU5ErkJggg==">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d0d0d;
+    --gold: #c9943a;
+    --gold-light: #f0c96a;
+    --cream: #faf7f2;
+    --warm-gray: #9c9287;
+    --green: #2d6a4f;
+    --green-light: #52b788;
+    --red-muted: #9b2335;
+    --section-bg: #f3ede3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    background: var(--ink);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(201,148,58,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,148,58,0.08) 0%, transparent 70%);
+  }
+
+  .hero-inner {
+    max-width: 780px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,148,58,0.4);
+    padding: 6px 18px;
+    border-radius: 2px;
+    margin-bottom: 40px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 8vw, 88px);
+    font-weight: 900;
+    line-height: 1.0;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    margin-top: 32px;
+    font-size: clamp(15px, 2vw, 18px);
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    max-width: 540px;
+    margin-inline: auto;
+  }
+
+  .hero-sub strong {
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+
+  .scroll-hint {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.3);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+
+  /* SECTION BASE */
+  .section {
+    padding: 100px 24px;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .container-wide {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+    max-width: 60px;
+  }
+
+  /* DIAGNOSIS */
+  .diagnosis {
+    background: var(--section-bg);
+  }
+
+  .diagnosis h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 32px;
+  }
+
+  .diagnosis p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #3a3530;
+    margin-bottom: 20px;
+  }
+
+  .diagnosis .name-callout {
+    margin: 48px 0;
+    border-left: 3px solid var(--gold);
+    padding-left: 24px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #3a3530;
+  }
+
+  .gap-list {
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .gap-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 16px;
+    color: #3a3530;
+    padding: 14px 18px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.07);
+  }
+
+  .gap-item::before {
+    content: '—';
+    color: var(--warm-gray);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .rejection-list {
+    margin: 36px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .rejection-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    color: var(--red-muted);
+    font-weight: 400;
+  }
+
+  .rejection-item .icon { font-size: 18px; flex-shrink: 0; }
+
+  /* STEPS */
+  .steps-section {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .steps-section .section-label { color: rgba(255,255,255,0.35); }
+  .steps-section .section-label::after { background: rgba(255,255,255,0.12); }
+
+  .steps-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 42px);
+    font-weight: 700;
+    margin-bottom: 70px;
+    line-height: 1.2;
+  }
+
+  .steps-heading em { font-style: italic; color: var(--gold); }
+
+  .step {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 0 32px;
+    margin-bottom: 64px;
+    align-items: start;
+  }
+
+  .step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(201,148,58,0.2);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .step-body {}
+
+  .step-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .step-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+  }
+
+  .win-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .win-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .win-item .tick { color: var(--green-light); flex-shrink: 0; }
+
+  .step-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin-bottom: 64px;
+    grid-column: 1 / -1;
+  }
+
+  /* RESULT */
+  .result-section {
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  .result-section .section-label { color: rgba(13,13,13,0.45); }
+  .result-section .section-label::after { background: rgba(13,13,13,0.15); }
+
+  .result-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .result-section h2 em {
+    font-style: italic;
+    color: #fff;
+  }
+
+  .result-section .result-body-text {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+    color: rgba(13,13,13,0.8);
+    max-width: 560px;
+  }
+
+  .result-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 0 0 48px;
+  }
+
+  .pillar {
+    background: var(--ink);
+    border-radius: 4px;
+    padding: 18px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pillar::before { content: '✓'; font-size: 16px; color: var(--gold-light); }
+
+  .result-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--ink);
+    border-radius: 6px;
+    padding: 24px 32px;
+  }
+
+  .result-badge-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .result-badge-detail {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  .result-badge-detail strong {
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+
+  /* TESTIMONIAL */
+  .testimonial-section {
+    background: var(--ink);
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .testimonial-card {
+    position: relative;
+    border-left: 3px solid var(--gold);
+    padding: 48px 48px 48px 52px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .testimonial-quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: var(--gold);
+    opacity: 0.25;
+    line-height: 0.8;
+    position: absolute;
+    top: 32px;
+    right: 40px;
+    user-select: none;
+  }
+
+  .testimonial-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.65;
+    color: #fff;
+    margin-bottom: 36px;
+    max-width: 620px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .testimonial-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.03em;
+  }
+
+  .testimonial-role {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* PROOF */
+  .proof-section {
+    background: var(--cream);
+  }
+
+  .proof-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 700;
+    margin-bottom: 48px;
+    line-height: 1.2;
+  }
+
+  .proof-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .proof-card {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .proof-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--gold);
+  }
+
+  .proof-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .proof-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .proof-company {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* CTA */
+  /* CTA */
+  .cta-section {
+    background: var(--ink);
+    text-align: center;
+    padding: 120px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(201,148,58,0.1) 0%, transparent 70%);
+  }
+
+  .cta-section .container { position: relative; z-index: 1; }
+
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 12vw, 110px);
+    font-weight: 900;
+    line-height: 0.95;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  .cta-section h2 em {
+    font-style: italic;
+    color: var(--gold);
+    display: block;
+  }
+
+  .cta-section .cta-sub {
+    font-size: clamp(16px, 2vw, 19px);
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto 16px;
+  }
+
+  .cta-prompt {
+    font-size: 15px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 36px;
+    font-style: italic;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 22px 56px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    letter-spacing: 0.01em;
+  }
+
+  .cta-btn:hover {
+    background: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(201,148,58,0.35);
+  }
+
+  .cta-trust {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .cta-trust span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .cta-trust span::before {
+    content: '✓';
+    color: var(--green-light);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 13px;
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 540px) {
+    .step {
+      grid-template-columns: 1fr;
+    }
+    .step-number {
+      font-size: 48px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Case Study — MasterCard Foundation Grant</span>
+    <h1>How a Founder<br>Got <em>$100k</em><br>in Funding</h1>
+    <p class="hero-sub">
+      Most founders think they're rejected because their idea isn't good enough.<br>
+      <strong>But in reality, they're rejected because they weren't investor-ready — and didn't know it.</strong>
+    </p>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Read the story</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSIS -->
+<section class="section diagnosis">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+
+    <h2 class="fade-up">The gap between impact<br>and investor-readiness</h2>
+
+    <div class="name-callout fade-up">
+      When we started working with <strong>Dr. Aderinsola</strong>, founder of <strong>I-Train Africa</strong>, the business had real momentum — but the financials couldn't prove it.
+    </div>
+
+    <div class="gap-list fade-up">
+      <div class="gap-item">Sales records, but not reconciled</div>
+      <div class="gap-item">Bank statements that didn't match</div>
+      <div class="gap-item">No traction report</div>
+      <div class="gap-item">No audited financial reports</div>
+      <div class="gap-item">No management accounts</div>
+    </div>
+
+    <p class="fade-up">She wasn't lacking impact. She wasn't lacking progress.<br>She was lacking <strong>investor-ready financials</strong> — the kind that persuades decision-makers to take you seriously.</p>
+
+    <div class="rejection-list fade-up" style="margin-top:36px;">
+      <div class="rejection-item"><span class="icon">❌</span> Her application wasn't going to stand a chance</div>
+      <div class="rejection-item"><span class="icon">❌</span> Investors would see "risk" instead of traction</div>
+      <div class="rejection-item"><span class="icon">❌</span> Her grant opportunity was going to slip away</div>
+    </div>
+
+    <p class="fade-up" style="margin-top:36px; font-weight:500;">So here's exactly what we did — step by step — to turn everything around.</p>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section steps-section">
+  <div class="container">
+    <div class="section-label">The Process</div>
+    <h2 class="steps-heading fade-up">Four steps to become<br><em>investor-ready</em></h2>
+
+    <!-- Step 1 -->
+    <div class="step fade-up">
+      <div class="step-number">01</div>
+      <div class="step-body">
+        <span class="step-tag">Clean Foundation</span>
+        <h3 class="step-title">We cleaned the previous months' financials</h3>
+        <p class="step-desc">We reconciled every sale with the bank statements and organized expenses and revenue properly. In a few weeks, she went from "unreconciled financials" to a complete financial picture investors could trust.</p>
+        <div class="win-list">
+          <div class="win-item"><span class="tick">✔</span> A clean Profit & Loss statement</div>
+          <div class="win-item"><span class="tick">✔</span> A clear balance sheet</div>
+          <div class="win-item"><span class="tick">✔</span> An audited financial statement</div>
+          <div class="win-item"><span class="tick">✔</span> Detailed management accounts</div>
+          <div class="win-item"><span class="tick">✔</span> A story investors could actually trust</div>
+        </div>
+        <p style="margin-top:20px; font-size:14px; color:rgba(255,255,255,0.4);">This alone removes 70% of the rejection risk.</p>
+      </div>
+    </div>
+    <div style="height:1px; background:rgba(255,255,255,0.06); margin-bottom:64px;"></div>
+
+    <!-- Step 2 -->
+    <div class="step fade-up">
+      <div class="step-number">02</div>
+      <div class="step-body">
+        <span class="step-tag">Financial Model</span>
+        <h3 class="step-title">We built a defendable financial model</h3>
+        <p class="step-desc">Not guesswork. Not hopeful projections. A model that showed exactly how the business makes money — and why it will keep growing.</p>
+        <div class="win-list">
+          <div class="win-item"><span class="tick">✔</span> How she makes money</div>
+          <div class="win-item"><span class="tick">✔</span> Her growth path</div>
+          <div class="win-item"><span class="tick">✔</span> Unit economics</div>
+          <div class="win-item"><span class="tick">✔</span> Margins</div>
+        </div>
+        <p style="margin-top:20px; font-size:14px; color:rgba(255,255,255,0.4);">This is what tells investors: "This founder understands the numbers behind the business."</p>
+      </div>
+    </div>
+    <div style="height:1px; background:rgba(255,255,255,0.06); margin-bottom:64px;"></div>
+
+    <!-- Step 3 -->
+    <div class="step fade-up">
+      <div class="step-number">03</div>
+      <div class="step-body">
+        <span class="step-tag">Impact Report</span>
+        <h3 class="step-title">We created an Impact & Traction Report that impressed the grant team</h3>
+        <p class="step-desc">Most founders talk about impact but don't quantify anything. We turned her story into something tangible, credible, and compelling.</p>
+        <div class="win-list">
+          <div class="win-item"><span class="tick">✔</span> A clean traction snapshot</div>
+          <div class="win-item"><span class="tick">✔</span> Attendance numbers</div>
+          <div class="win-item"><span class="tick">✔</span> Conference outcomes</div>
+          <div class="win-item"><span class="tick">✔</span> Progress across the years</div>
+          <div class="win-item"><span class="tick">✔</span> The real profit the business had been generating</div>
+        </div>
+      </div>
+    </div>
+    <div style="height:1px; background:rgba(255,255,255,0.06); margin-bottom:64px;"></div>
+
+    <!-- Step 4 -->
+    <div class="step fade-up">
+      <div class="step-number">04</div>
+      <div class="step-body">
+        <span class="step-tag">The Win</span>
+        <h3 class="step-title">She applied with confidence and won $100,000</h3>
+        <p class="step-desc">Her application wasn't just submitted — it was taken seriously. Because she could walk into any room and defend every number.</p>
+        <div class="win-list">
+          <div class="win-item"><span class="tick">✔</span> Clean books</div>
+          <div class="win-item"><span class="tick">✔</span> A real financial model</div>
+          <div class="win-item"><span class="tick">✔</span> Traction proof</div>
+          <div class="win-item"><span class="tick">✔</span> An impact report</div>
+          <div class="win-item"><span class="tick">✔</span> A founder who could defend her numbers confidently</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESULT -->
+<section class="section result-section">
+  <div class="container">
+    <div class="section-label">The Outcome</div>
+    <h2 class="fade-up">Grantors saw what she brought<br>to the table. They <em>trusted the numbers.</em></h2>
+    <p class="result-body-text fade-up">She secured $100,000 from the MasterCard Foundation. Not because her idea changed — because the story her financials told finally matched her reality.</p>
+
+    <div class="result-badge fade-up">
+      <div class="result-badge-amount">$100k</div>
+      <div class="result-badge-detail">
+        <strong>MasterCard Foundation Grant</strong>
+        I-Train Africa — Dr. Aderinsola
+      </div>
+    </div>
+
+    <div class="result-pillars fade-up" style="margin-top:40px;">
+      <div class="pillar">Clean books</div>
+      <div class="pillar">Real financial model</div>
+      <div class="pillar">Traction proof</div>
+      <div class="pillar">Impact report</div>
+      <div class="pillar">Confident founder</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section testimonial-section">
+  <div class="container">
+    <div class="testimonial-card fade-up">
+      <div class="testimonial-quote-mark">"</div>
+      <blockquote class="testimonial-text">
+        The truth is this: if our books were not impeccably maintained and investor-ready, there is no way I-Train Africa would have been selected for the MasterCard Foundation EdTech Fellowship 2025 which came with a 100,000 USD grant. Snumari's work directly contributed to that milestone.
+      </blockquote>
+      <div class="testimonial-author">
+        <div class="testimonial-name">Aderinsola Adio-Adepoju (PhD)</div>
+        <div class="testimonial-role">Founder, I-Train Africa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="section proof-section">
+  <div class="container-wide">
+    <div class="section-label">More Wins</div>
+    <h2 class="fade-up">The same process.<br>More founders funded.</h2>
+    <div class="proof-cards">
+      <div class="proof-card fade-up">
+        <div class="proof-amount">$100k</div>
+        <div class="proof-name">HiPrep — Adanma</div>
+        <div class="proof-company">Education Technology</div>
+      </div>
+      <div class="proof-card fade-up">
+        <div class="proof-amount">£25k</div>
+        <div class="proof-name">Tiny Hearts Tech — Virtue Oboro</div>
+        <div class="proof-company">Health Technology</div>
+      </div>
+      <div class="proof-card fade-up">
+        <div class="proof-amount">$700k+</div>
+        <div class="proof-name">I-Metro</div>
+        <div class="proof-company">Transport Company, Abuja</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section">
+  <div class="container">
+    <h2 class="fade-up">Now it's your<br>turn to get<br><em>funded.</em></h2>
+    <p class="cta-sub fade-up">We've helped founders across Africa get funded — and it almost always starts with uncovering what's quietly holding them back.</p>
+    <p class="cta-prompt fade-up">Click below and let's figure out what's standing in your way.</p>
+    <a href="https://funding.datnayiedge.com/" class="cta-btn fade-up">Let's Get You Funded →</a>
+  </div>
+</section>
+
+
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 80);
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
