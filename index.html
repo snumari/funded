@@ -860,6 +860,18 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+
+  const ctaBtn = document.querySelector('.cta-btn');
+  ctaBtn.addEventListener("click", () => {
+    navigator.sendBeacon(
+      "https://69c3eaec00271f052f45.fra.appwrite.run",
+       new Blob(
+          [JSON.stringify({ action: "funded_init" })], 
+          { type: 'application/json' }
+              ));
+    });
+    
 </script>
 </body>
 </html>
