@@ -863,14 +863,20 @@
 
 
   const ctaBtn = document.querySelector('.cta-btn');
+
   ctaBtn.addEventListener("click", () => {
-    navigator.sendBeacon(
-      "https://69c3eaec00271f052f45.fra.appwrite.run",
-       new Blob(
-          [JSON.stringify({ action: "funded_init" })], 
-          { type: 'application/json' }
-              ));
-    });
+
+  const url = 'https://69c3eaec00271f052f45.fra.appwrite.run';
+  
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ action: 'funded_init' }),
+    keepalive: true 
+  }).catch(err => console.error("Sync failed:", err));
+});
     
 </script>
 </body>
